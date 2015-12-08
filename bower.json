@@ -1,0 +1,27 @@
+{
+  "name": "MusicBrowseApp",
+  "homepage": "https://github.com/jeffward01/MusicBrowseApp",
+  "authors": [
+    "Jeff Ward <jeffwardcoding@gmail.com>"
+  ],
+  "description": "A music browsing application",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "angular-ui-router": "~0.2.15",
+    "angular-ui-select2": "~0.0.5",
+    "angular-ui-select3": "ui-select#*",
+    "angular-loading-bar": "~0.8.0"
+  }
+}
