@@ -20,9 +20,9 @@
     "angular": "~1.4.8",
     "bootstrap": "~3.3.6",
     "angular-ui-router": "~0.2.15",
-    "angular-ui-select2": "~0.0.5",
-    "angular-ui-select3": "ui-select#*",
     "angular-loading-bar": "~0.8.0",
-    "angular-bootstrap": "~0.14.3"
+    "angular-bootstrap": "~0.14.3",
+    "angular-sanitize": "~1.4.8",
+    "ui-select": "angular-ui-select#~0.13.2"
   }
 }
