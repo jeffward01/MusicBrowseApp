@@ -3,7 +3,7 @@
 
             <div class="form-group"  style=" padding-top: 20px; ">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
+                    <input type="text" class="form-control" placeholder="Search for Song Title...">
                     <span class="input-group-btn">
         <button class="btn btn-default" type="button">Go!</button>
       </span>
@@ -21,7 +21,7 @@
             <div class="form-group pull-right DropDownSearch" >
                
                 <ui-select ng-model="data.selectedDifficulty" id="selectDropDown"theme="select2" style=" padding-top: 20px; ">
-                    <ui-select-match style="height: 35px;"placeholder="Select Difficulty...">{{$select.selected.difficulty}}</ui-select-match>
+                    <ui-select-match style="height: 35px;" placeholder="Sort By...">{{$select.selected.difficulty}}</ui-select-match>
                     <ui-select-choices repeat="item in songs | unique: 'difficulty' | filter: $select.search ">
                         <span ng-bind-html="item.difficulty | unique:'difficulty' |  highlight: $select.search"></span>
                     </ui-select-choices>
