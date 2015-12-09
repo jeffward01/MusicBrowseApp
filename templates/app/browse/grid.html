@@ -1,0 +1,34 @@
+<h2>My grid Area</h2>
+<div class="MainContainer">
+    <div class="MusicArea">
+        <div class="row">
+            <div class="col-xs-6 col-md-4" ng-repeat="song in songs">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{song.smallThumb.url}}" />
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-xs-12 col-md-4">
+                            <h4>Difficulty</h4>
+                            <small>{{song.difficulty}}</small>
+                        </div>
+
+                        <div class="col-xs-12 col-md-4">
+                            <h4>Song Title</h4>
+                            <small>{{song.title}}</small>
+                        </div>
+
+                        <div class="col-xs-12 col-md-4">
+                            <h4>Length</h4>
+                            <small>{{timeConvert(song.metaData.totalTime)}}</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
