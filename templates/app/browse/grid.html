@@ -4,9 +4,15 @@
             <div class="col-xs-6 col-md-4" ng-repeat="song in songs | filter: data.selectedSongs| filter: data.selectedDifficulty ">
                 <div class="card">
                     <div class="card-image">
-                        <img src="{{song.smallThumb.url}}" />
-                    </div>
+                        <img class="cardImage"  src="{{song.smallThumb.url}}" />
+  
+                
+</div>
+    <div id="Caption" class="cardText col-xs-12 col-sm-4" style="width:100%"> 
+                    
+                    <h2><span><span style="">{{song.title}}</span><br />{{song.artist.name}}</span></h2>
 
+                    </div>
                     <div class="row" id="cardArea">
 
                         <div class="col-xs-12 col-sm-4">
@@ -15,13 +21,15 @@
                         </div>
 
                         <div class="col-xs-12 col-sm-4">
-                            <span class="labelClass">Song Title</span><br>
+                            <span class="labelClass">Song Title</span>
+                            <br>
 
                             <small>{{song.title}}</small>
                         </div>
 
                         <div class="col-xs-12 col-sm-4">
-                            <span class="labelClass">Length</span><br>
+                            <span class="labelClass">Length</span>
+                            <br>
 
                             <small>{{timeConvert(song.metaData.totalTime)}}</small>
                         </div>
@@ -33,3 +41,6 @@
     </div>
 
 </div>
+
+
+    
