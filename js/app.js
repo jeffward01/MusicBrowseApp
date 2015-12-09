@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router', 'ui.bootstrap', 'angular-loading-bar', 'ui.select', 'ngSanitize']).config(function ($stateProvider, $urlRouterProvider) {
+angular.module('app', ['ui.router', 'ui.filters', 'ui','ui.bootstrap', 'angular-loading-bar', 'ui.select', 'ngSanitize']).config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/app/browse');
 
@@ -8,34 +8,43 @@ angular.module('app', ['ui.router', 'ui.bootstrap', 'angular-loading-bar', 'ui.s
     
 });
 
-//Ui-Select 'Props Filter' Code
-angular.module('app').filter('propsFilter', function () {
-    return function (items, props) {
-        var out = [];
 
-        if (angular.isArray(items)) {
-            items.forEach(function (item) {
-                var itemMatches = false;
+//Angular UI Unique Filter
+angular.module('ui.filters').filter('unique', function () {
 
-                var keys = Object.keys(props);
-                for (var i = 0; i < keys.length; i++) {
-                    var prop = keys[i];
-                    var text = props[prop].toLowerCase();
-                    if (item[prop].toString().toLowerCase().indexOf(text) !== -1) {
-                        itemMatches = true;
-                        break;
-                    }
-                }
+  return function (items, filterOn) {
 
-                if (itemMatches) {
-                    out.push(item);
-                }
-            });
+    if (filterOn === false) {
+      return items;
+    }
+
+    if ((filterOn || angular.isUndefined(filterOn)) && angular.isArray(items)) {
+      var hashCheck = {}, newItems = [];
+
+      var extractValueToCompare = function (item) {
+        if (angular.isObject(item) && angular.isString(filterOn)) {
+          return item[filterOn];
         } else {
-            // Let the output be the input untouched
-            out = items;
+          return item;
+        }
+      };
+
+      angular.forEach(items, function (item) {
+        var valueToCheck, isDuplicate = false;
+
+        for (var i = 0; i < newItems.length; i++) {
+          if (angular.equals(extractValueToCompare(newItems[i]), extractValueToCompare(item))) {
+            isDuplicate = true;
+            break;
+          }
+        }
+        if (!isDuplicate) {
+          newItems.push(item);
         }
 
-        return out;
+      });
+      items = newItems;
     }
+    return items;
+  };
 });

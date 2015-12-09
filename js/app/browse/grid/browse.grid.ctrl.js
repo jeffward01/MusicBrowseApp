@@ -14,7 +14,13 @@ angular.module('app').controller('BrowseController', function($rootScope, $scope
         
    
 
+    $scope.data = {
+        selectedDifficulty: ''
+    };
         
+        $rootScope.$on('difficultyChanged', function(ev,arg) {
+            $scope.data.selectedDifficulty = arg.difficulty;
+        })
        
  })
     
@@ -28,7 +34,11 @@ $scope.timeConvert = function rectime(secs) {
 	while (min.length < 2) {min = '0' + min;}
 	while (sec.length < 2) {sec = '0' + min;}
 	if (hr) hr += ':';
-	return hr + min + ':' + Math.round(sec);
+    var time = hr + min + ':' + Math.round(sec);
+    if(time == "NaN:NaN"){
+        return "Not Listed";
+    }
+	return time;
 }
 });
 

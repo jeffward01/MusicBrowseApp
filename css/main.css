@@ -10,10 +10,12 @@ body{
 }
 
 .card{
-    height: auto;
     border: 1px solid #ccc;
     margin-bottom: 24px;
     background-color: white;
+    height: auto;
+    max-height: 420px;
+    max-width: 360px;
 }
 
 .MainContainer{
@@ -27,7 +29,7 @@ body{
 #cardArea {
     margin: 0 auto;
     text-align: center;
-    
+    height: 80px;
     
 }
 #cardArea span{
