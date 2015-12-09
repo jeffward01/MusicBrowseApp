@@ -5,7 +5,7 @@
                
                
                 <div class="form-group DropDownSearch" >            
-                <ui-select ng-model="data.selectedSongs" id="selectDropDown"theme="select2" style=" padding-top: 20px; ">
+                <ui-select ng-model="data.selectedSongs"  id="selectDropDown"theme="select2" style=" padding-top: 20px; ">
                     <ui-select-match style="height: 35px;" placeholder="Search Songs...">{{$select.selected.title}}</ui-select-match>
                     <ui-select-choices repeat="item in songs | filter: $select.search ">
                         <span ng-bind-html="item.title |  highlight: $select.search"></span>
@@ -17,8 +17,7 @@
                 
                 
                 <div class="form-group">
-                    <div class="spacer" style="height:15px;"></div>
-                                <button type="button" class="btn btn-information" ng-click="data.selectedDifficulty = {}; data.selectedSongs = {}; ">[button]</button>
+                                <button type="button" class="btn btn-information" ng-click="data.selectedDifficulty = {}; data.selectedSongs = {}; ">Clear</button>
 
                 </div>
             </div>
@@ -31,8 +30,8 @@
       
             <div class="form-group pull-right DropDownSearch" >
                
-                <ui-select ng-model="data.selectedDifficulty" id="selectDropDown"theme="select2" style=" padding-top: 20px; ">
-                    <ui-select-match style="height: 35px;" placeholder="Sort By...">{{$select.selected.difficulty}}</ui-select-match>
+                <ui-select ng-model="data.selectedDifficulty" id="selectDropDown"  theme="select2" style=" padding-top: 20px; ">
+                    <ui-select-match  style="height: 35px;" placeholder="Sort By...">{{$select.selected.difficulty}}</ui-select-match>
                     <ui-select-choices repeat="item in songs | unique: 'difficulty' | filter: $select.search ">
                         <span ng-bind-html="item.difficulty | unique:'difficulty' |  highlight: $select.search"></span>
                     </ui-select-choices>

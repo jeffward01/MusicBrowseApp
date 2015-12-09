@@ -21,8 +21,10 @@ angular.module('app').controller('AppController', function ($rootScope, $scope, 
             $scope.clear = function () {
                 $scope.data.selectedDifficulty = {};
                 $scope.data.selectedSongs = {};
-                
+
             };
+
+
 
             $scope.$watch('data.selectedSongs', function (n, o) {
                 if (o !== n) {
@@ -36,5 +38,18 @@ angular.module('app').controller('AppController', function ($rootScope, $scope, 
                 }
             });
         });
-});
+    clearListener();
 
+    function clearListener() {
+
+        $('#group2').on('click', function () {
+            alert("clicked");
+            $scope.data.selectedSongs = {};
+        });
+        $('#selectedDropDown2').on('click', function () {
+            alert("clicked");
+
+            $scope.data.selectedDifficulty = {};
+        })
+    }
+});
