@@ -12,13 +12,10 @@ angular.module('app').controller('BrowseController', function($rootScope, $scope
             $scope.songs.push(json[i]);
         }
         
-        $scope.ImageSource = json[0].smallThumb.url;
-        $scope.Difficulty = json[0].difficulty;
-var LengthOfSongInSeconds = json[0].metaData.totalTime;
+   
 
         
-            $scope.Title = json[0].title; 
-           $scope.Length = rectime(LengthOfSongInSeconds)
+       
  })
     
 
