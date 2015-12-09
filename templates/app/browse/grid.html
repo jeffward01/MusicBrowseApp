@@ -1,7 +1,7 @@
 <div class="MainContainer">
     <div class="MusicArea">
         <div class="row">
-            <div class="col-xs-6 col-md-4" ng-repeat="song in songs | filter: data.selectedDifficulty">
+            <div class="col-xs-6 col-md-4" ng-repeat="song in songs | filter: data.selectedSongs| filter: data.selectedDifficulty ">
                 <div class="card">
                     <div class="card-image">
                         <img src="{{song.smallThumb.url}}" />

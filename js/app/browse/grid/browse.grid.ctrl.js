@@ -15,13 +15,16 @@ angular.module('app').controller('BrowseController', function($rootScope, $scope
    
 
     $scope.data = {
-        selectedDifficulty: ''
+        selectedDifficulty: '',
+        selectedSong:''
     };
         
         $rootScope.$on('difficultyChanged', function(ev,arg) {
             $scope.data.selectedDifficulty = arg.difficulty;
         })
-       
+        $rootScope.$on('songChanged', function(ev,arg) {
+            $scope.data.selectedSongs = arg.title;
+        })
  })
     
 

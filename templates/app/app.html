@@ -1,17 +1,28 @@
 <div class="row">
     <div class="col-xs-7 col-sm-3 col-md-3">
 
-            <div class="form-group"  style=" padding-top: 20px; ">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for Song Title...">
-                    <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-                </div>
+            <div class="form-group">
+               
+               
+                <div class="form-group DropDownSearch" >            
+                <ui-select ng-model="data.selectedSongs" id="selectDropDown"theme="select2" style=" padding-top: 20px; ">
+                    <ui-select-match style="height: 35px;" placeholder="Search Songs...">{{$select.selected.title}}</ui-select-match>
+                    <ui-select-choices repeat="item in songs | filter: $select.search ">
+                        <span ng-bind-html="item.title |  highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+    
+                
+                
+                
                 <div class="form-group">
                     <div class="spacer" style="height:15px;"></div>
+                                <button type="button" class="btn btn-information" ng-click="data.selectedDifficulty = {} ">[button]</button>
+
                 </div>
             </div>
+
     
 
     </div>
